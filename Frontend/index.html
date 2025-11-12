@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="eng">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Väder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Väder</h1>
+        <input id="city" placeholder="Enter any city in the world...">
+        <button onclick="getweather()">Search</button>
+
+        <h2 id="name"></h2>
+        <div id="temp"></div>
+        <div id="info"></div>
+        <div id="hours" class="row"></div>
+    </div>
+
+    <script>
+        // Tillfällig funktion
+        async function getweather() {
+            document.getElementById('name').textContent = 'searching...';
+            document.getElementById('temp').textContent = '';
+            document.getElementById('info').textContent = '';
+            document.getElementById('hours').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
