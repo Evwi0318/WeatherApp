@@ -56,8 +56,8 @@
 
                 document.getElementById("name").textContent = `${data.city}, ${data.country}`;
                 document.getElementById("temp").textContent = `${Math.round(data.currentTemperature)}°`;
-                document.getElementById("info").textContent =
-                    `${codeToEmoji(data.currentCode)} (${data.currentCode})`;
+                // document.getElementById("info").textContent =
+                //     `${codeToEmoji(data.currentCode)} (${data.currentCode})`;
 
                 data.hourly.forEach(h => {
                     const div = document.createElement("div");
