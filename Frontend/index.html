@@ -55,7 +55,7 @@
                 const data = await res.json();
 
                 document.getElementById("name").textContent = `${data.city}, ${data.country}`;
-                document.getElementById("temp").textContent = `${data.currentTemperature}°`;
+                document.getElementById("temp").textContent = `${Math.round(data.currentTemperature)}°`;
                 document.getElementById("info").textContent =
                     `${codeToEmoji(data.currentCode)} (${data.currentCode})`;
 
