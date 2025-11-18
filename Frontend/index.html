@@ -4,15 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Väder</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="app">
         <h1>Weather</h1>
+
+        <!-- Search field -->
         <input id="city" placeholder="Enter any city in the world...">
-        <button onclick="getweather()">Search</button>
+
+        <!-- Search button -->
+        <button onclick="getWeather()">Search</button>
+
 
         <h2 id="name"></h2>
         <div id="temp"></div>
@@ -21,14 +26,55 @@
     </div>
 
     <script>
-        // Tillfällig funktion
-        async function getweather() {
-            document.getElementById('name').textContent = 'searching...';
-            document.getElementById('temp').textContent = '';
-            document.getElementById('info').textContent = '';
-            document.getElementById('hours').innerHTML = '';
+        // Translates weather code to emoji
+        function codeToEmoji(code) {
+            if (code === 0) return "☀️";
+            if (code === 1 || code === 2) return "🌤️";
+            if (code === 3) return "☁️";
+            if (code >= 45 && code <= 48) return "🌫️";
+            if (code >= 51 && code <= 57) return "🌦️";
+            if (code >= 61 && code <= 65) return "🌧️";
+            if (code >= 71 && code <= 77) return "❄️";
+            if (code >= 80 && code <= 82) return "🌧️";
+            if (code >= 95 && code <= 99) return "⛈️";
+            return "❓";
+        }
+
+        // Fetches weather from backend
+        async function getWeather() {
+
+            const city = document.getElementById("city").value;
+
+            document.getElementById("name").textContent = "Searching...";
+            document.getElementById("temp").textContent = "";
+            document.getElementById("info").textContent = "";
+            document.getElementById("hours").innerHTML = "";
+
+            try {
+                const res = await fetch(`http://localhost:5259/api/forecast?city=${city}`);
+                const data = await res.json();
+
+                document.getElementById("name").textContent = `${data.city}, ${data.country}`;
+                document.getElementById("temp").textContent = `${data.currentTemperature}°`;
+                document.getElementById("info").textContent =
+                    `${codeToEmoji(data.currentCode)} (${data.currentCode})`;
+
+                data.hourly.forEach(h => {
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+                        <strong>${h.time.substring(11, 16)}</strong><br>
+                        ${codeToEmoji(h.code)}<br>
+                        ${h.temperature}°
+                    `;
+                    document.getElementById("hours").appendChild(div);
+                });
+
+            } catch (err) {
+                document.getElementById("name").textContent = "Error fetching weather.";
+            }
         }
     </script>
+
 </body>
 
 </html>
