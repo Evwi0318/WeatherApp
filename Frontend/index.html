@@ -67,12 +67,13 @@
                 // document.getElementById("info").textContent =
                 //     `${codeToEmoji(data.currentCode)} (${data.currentCode})`;
 
+                //Shows Hourly temp
                 data.hourly.forEach(h => {
                     const div = document.createElement("div");
                     div.innerHTML = `
                         <strong>${h.time.substring(11, 16)}</strong><br>
                         ${codeToEmoji(h.code)}<br>
-                        ${h.temperature}°
+                        ${Math.round(h.temperature)}°
                     `;
                     document.getElementById("hours").appendChild(div);
                 });
