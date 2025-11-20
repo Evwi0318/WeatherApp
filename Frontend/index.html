@@ -57,6 +57,13 @@
 
                 document.getElementById("name").textContent = `${data.city}, ${data.country}`;
                 document.getElementById("temp").textContent = `${Math.round(data.currentTemperature)}°`;
+
+                // --- HIGH / LOW temperatures ---
+                const temps = data.hourly.map(h => h.temperature);
+                const high = Math.round(Math.max(...temps));
+                const low = Math.round(Math.min(...temps));
+                document.getElementById("highlow").innerHTML = `H: ${high}°  |  L: ${low}°`;
+
                 // document.getElementById("info").textContent =
                 //     `${codeToEmoji(data.currentCode)} (${data.currentCode})`;
 
