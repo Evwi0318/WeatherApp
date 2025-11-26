@@ -13,15 +13,15 @@ Byggd för att lära och demonstrera praktisk utveckling med **.NET 8 Minimal AP
 
 ## ✨ Funktioner
 
-| Funktion | 
+| Funktion | Status |
 |--------|:---:|
-| Sök valfri stad globalt ✔️ |
-| Live-väderdata via Open-Meteo API ✔️ |
-| Temperatur visas i heltal (avrundat) ✔️ |
-| High/Low temperatur för dagen ✔️ |
-| Tim-för-timmar prognos (horisontellt scrollbart) ✔️ |
-| Sökfunktion fungerar även via Enter-tangenten ✔️ |
-| Transparent UI-kort med bakgrundsbild ✔️ |
+| Sök vilken stad som helst i världen 🌍 | ✔️ |
+| Live-väderdata via Open-Meteo API | ✔️ |
+| Visar temperatur i heltal (avrundad) | ✔️ |
+| High/Low temperatur för dagen | ✔️ |
+| Tim-för-timme prognos (horisontell scroll) | ✔️ |
+| Sök även med Enter-tangenten | ✔️ |
+| Transparent UI-kort med bakgrundsbild | ✔️ |
 
 ---
 
@@ -29,12 +29,12 @@ Byggd för att lära och demonstrera praktisk utveckling med **.NET 8 Minimal AP
 
 | Del | Teknologi |
 |-----|----------|
-| Backend | .NET 8 – Minimal API |
-| HTTP Requests | HttpClient |
+| Backend | .NET 8 Minimal API |
+| HTTP requests | HttpClient |
 | Frontend | HTML + CSS + JavaScript |
-| API-källa | Open-Meteo Weather API |
+| Data hämtas från | Open-Meteo.com Weather API |
 | Versionshantering | Git & GitHub |
 
 ---
 
-## 🚀 Starta Applikationen Här !
+## 🚀 Starta projektet här !
