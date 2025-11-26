@@ -7,13 +7,13 @@ Byggd för att lära och demonstrera praktisk utveckling med **.NET 8 Minimal AP
 
 ## 🖼 Preview
 
-<img src="Frontend/Screenshot/Ui-preview.png" width="600">
+<img src="Screenshot/Ui-preview.png" width="600">
 
 ---
 
 ## ✨ Funktioner
 
-| Funktion | Status |
+| Funktion | 
 |--------|:---:|
 | Sök valfri stad globalt ✔️ |
 | Live-väderdata via Open-Meteo API ✔️ |
