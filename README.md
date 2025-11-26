@@ -22,7 +22,7 @@ Byggd för att lära och demonstrera praktisk utveckling med **.NET 8 Minimal AP
 | Tim-för-timme prognos (horisontell scroll) | ✔️ |
 | Sök även med Enter-tangenten | ✔️ |
 | Transparent UI-kort med bakgrundsbild | ✔️ |
-| Spara fvorit städer | ❌ |
+| Spara favorit städer | ❌ |
 | Nederbörds information | ❌ |
 | UV information | ❌ |
 | Vind information | ❌ |
